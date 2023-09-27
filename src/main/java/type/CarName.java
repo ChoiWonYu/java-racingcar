@@ -1,5 +1,7 @@
 package type;
 
+import exception.ExceptionHandler;
+
 public class CarName {
 
     public static final int MAX_LENGTH = 5;
@@ -14,7 +16,7 @@ public class CarName {
 
     private void validateLength(final String carName) {
         if (carName.length() > MAX_LENGTH) {
-            //에러 출력
+            ExceptionHandler.printErrorMessage(String.format("이름은 %d자 이하만 가능합니다.",MAX_LENGTH));
             throw new IllegalArgumentException();
         }
     }
