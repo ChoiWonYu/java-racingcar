@@ -29,14 +29,15 @@ public class RacingGame {
     }
 
     public void race() {
-        System.out.println("\n실행 결과");
-
+        printNewLine();
+        System.out.println("실행 결과");
         cars.repeatAction(Car::printCarsMove);
-        System.out.println("\n");
+        printNewLine();
+
         for (int i = 0; i < tryCount.getTryCount(); i++) {
             cars.repeatAction(this::moveOrStopByManager);
             cars.repeatAction(Car::printCarsMove);
-            System.out.println("\n");
+            printNewLine();
         }
     }
 
@@ -46,6 +47,13 @@ public class RacingGame {
 
     private void moveOrStopByManager(Car car) {
         boolean canMove = movingManager.canMove();
-        car.moveOrStopByManager(canMove);
+
+        if(canMove){
+            car.move();
+        }
+    }
+
+    private void printNewLine() {
+        System.out.println("\n");
     }
 }
