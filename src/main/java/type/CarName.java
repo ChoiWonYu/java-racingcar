@@ -8,7 +8,15 @@ public class CarName {
     private final String carName;
 
     public CarName(final String carName){
+        validateLength(carName);
         this.carName=carName;
+    }
+
+    private void validateLength(final String carName) {
+        if(carName.length()>MAX_LENGTH){
+            //에러 출력
+            throw new IllegalArgumentException();
+        }
     }
 
 }
