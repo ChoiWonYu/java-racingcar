@@ -11,4 +11,7 @@ public class CarList {
         this.cars = cars;
     }
 
+    public void repeatAction(Consumer<Car> action) {
+        cars.forEach(action);
+    }
 }
