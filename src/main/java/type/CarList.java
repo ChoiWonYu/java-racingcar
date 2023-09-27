@@ -20,13 +20,13 @@ public class CarList {
     public List<Car> getWinners() {
         Integer maxValue = getMaxValue();
         return cars.stream()
-            .filter(car -> car.getMoveCount().getMoveCount() == maxValue)
+            .filter(car -> car.getMoveCountValue() == maxValue)
             .collect(Collectors.toList());
     }
 
     public Integer getMaxValue() {
         return cars.stream()
-            .map(Car::getMoveCount).mapToInt(MoveCount::getMoveCount).max()
+            .mapToInt(Car::getMoveCountValue).max()
             .orElseThrow(NoSuchElementException::new);
     }
 }

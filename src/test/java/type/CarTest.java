@@ -1,6 +1,7 @@
 package type;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,28 +18,13 @@ class CarTest {
     }
 
     @Test
-    @DisplayName("false가 전달되면 움직이지 말아야 한다.")
-    void when_receive_false_dont_move() {
-
-        MoveCount moveCount = car.getMoveCount();
-        int initialMoveCount = moveCount.getMoveCount();
-
-        car.moveOrStopByManager(false);
-        int resultMoveCount = moveCount.getMoveCount();
-
-        Assertions.assertEquals(initialMoveCount, resultMoveCount);
-    }
-
-    @Test
-    @DisplayName("true가 전달되면 한 번 움직여야 한다.")
+    @DisplayName("움직였을 때 moveCount의 값 증가")
     void when_receive_true_move() {
 
-        MoveCount moveCount = car.getMoveCount();
-        int initialMoveCount = moveCount.getMoveCount();
+        int initialMoveCount = car.getMoveCountValue();
+        car.move();
+        int resultMoveCount = car.getMoveCountValue();
 
-        car.moveOrStopByManager(true);
-        int resultMoveCount = moveCount.getMoveCount();
-
-        Assertions.assertEquals(initialMoveCount + 1, resultMoveCount);
+        assertEquals(initialMoveCount + 1, resultMoveCount);
     }
 }
