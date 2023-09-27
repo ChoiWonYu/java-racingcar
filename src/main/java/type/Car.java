@@ -8,7 +8,7 @@ public class Car {
 
     public Car(CarName carName) {
         this.carName = carName;
-        this.moveCount = new MoveCount(0);
+        this.moveCount = new MoveCount(1);
         this.carNameOutput = new StringBuilder().append(carName.getCarName()).append(" : ");
     }
 
@@ -20,14 +20,13 @@ public class Car {
         if (canMove) {
             move();
         }
-        printCarsMove();
     }
 
     public void move() {
         moveCount.plusCount();
     }
 
-    private void printCarsMove() {
+    public void printCarsMove() {
         System.out.print(carNameOutput);
         System.out.println("-".repeat(moveCount.getMoveCount()));
     }
