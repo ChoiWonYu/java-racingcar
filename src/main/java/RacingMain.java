@@ -2,6 +2,7 @@ import java.util.List;
 import type.CarName;
 import type.TryCount;
 import view.InputView;
+import view.ResultView;
 
 public class RacingMain {
 
@@ -11,6 +12,8 @@ public class RacingMain {
 
         final RacingGame racingGame = new RacingGame(carNames, tryCount);
         racingGame.race();
+
+        ResultView.printWinners(racingGame.getWinners());
     }
 
 }

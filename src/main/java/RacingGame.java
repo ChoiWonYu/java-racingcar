@@ -8,6 +8,7 @@ import type.Car;
 import type.CarName;
 import type.CarList;
 import type.TryCount;
+import type.WinCars;
 
 public class RacingGame {
 
@@ -37,6 +38,10 @@ public class RacingGame {
             cars.repeatAction(Car::printCarsMove);
             System.out.println("\n");
         }
+    }
+
+    public WinCars getWinners() {
+        return cars.getWinners();
     }
 
     private void moveOrStopByManager(Car car) {
