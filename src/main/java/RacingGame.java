@@ -40,12 +40,12 @@ public class RacingGame {
         }
     }
 
-    public WinCars getWinners() {
-        return cars.getWinners();
+    public WinCars getWinCars() {
+        return new WinCars(cars.getWinners());
     }
 
     private void moveOrStopByManager(Car car) {
-        boolean canMove=movingManager.canMove();
+        boolean canMove = movingManager.canMove();
         car.moveOrStopByManager(canMove);
     }
 }

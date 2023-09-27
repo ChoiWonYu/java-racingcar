@@ -13,7 +13,7 @@ public class RacingMain {
         final RacingGame racingGame = new RacingGame(carNames, tryCount);
         racingGame.race();
 
-        ResultView.printWinners(racingGame.getWinners());
+        ResultView.printWinners(racingGame.getWinCars());
     }
 
 }

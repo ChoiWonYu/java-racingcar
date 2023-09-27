@@ -17,17 +17,16 @@ public class CarList {
         cars.forEach(action);
     }
 
-    public WinCars getWinners() {
+    public List<Car> getWinners() {
         Integer maxValue = getMaxValue();
-        List<Car> winCars = cars.stream()
+        return cars.stream()
             .filter(car -> car.getMoveCount().getMoveCount() == maxValue)
             .collect(Collectors.toList());
-        return new WinCars(winCars);
     }
 
     public Integer getMaxValue() {
         return cars.stream()
-            .map(Car::getMoveCount).mapToInt(MoveCount::getMoveCount)
-            .max().orElseThrow(NoSuchElementException::new);
+            .map(Car::getMoveCount).mapToInt(MoveCount::getMoveCount).max()
+            .orElseThrow(NoSuchElementException::new);
     }
 }
