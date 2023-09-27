@@ -16,6 +16,10 @@ public class Car {
         return moveCount;
     }
 
+    public String getCarNameValue() {
+        return carName.getCarName();
+    }
+
     public void moveOrStopByManager(boolean canMove) {
         if (canMove) {
             move();
