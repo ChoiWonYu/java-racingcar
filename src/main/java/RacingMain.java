@@ -10,8 +10,7 @@ public class RacingMain {
         final TryCount tryCount = InputView.getTryCount();
 
         final RacingGame racingGame = new RacingGame(carNames, tryCount);
-        //racingGame.race();
-
+        racingGame.race();
     }
 
 }
