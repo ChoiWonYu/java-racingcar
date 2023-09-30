@@ -3,12 +3,17 @@ package domain;
 public class Car {
 
     public static final Integer DEFAULT_MOVE_COUNT_VALUE=1;
-    private final CarName carName;
+    private final Name name;
     private final MoveCount moveCount;
 
-    public Car(CarName carName) {
-        this.carName = carName;
+    private Car(Name carName) {
+        this.name = carName;
         this.moveCount = new MoveCount(DEFAULT_MOVE_COUNT_VALUE);
+    }
+
+    public static Car from(String inputName) {
+        Name carName=Name.createCarName(inputName);
+        return new Car(carName);
     }
 
     public int getMoveCountValue() {
@@ -16,7 +21,7 @@ public class Car {
     }
 
     public String getCarNameValue() {
-        return carName.getCarName();
+        return name.getName();
     }
 
     public void move() {
