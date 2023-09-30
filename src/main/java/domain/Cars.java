@@ -21,8 +21,16 @@ public class Cars {
         return new Cars(carList);
     }
 
-    public void actOnEachCar(Consumer<Car> action) {
-        cars.forEach(action);
+    public void moveOrStopUsingManager() {
+        cars.forEach((car -> {
+            Boolean canMove = movingManager.canCarMove();
+            if(canMove){
+                car.move();
+            }}));
+    }
+
+    public List<Car> getCarList() {
+        return this.cars;
     }
 
     public List<Car> getWinners() {
