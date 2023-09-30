@@ -13,7 +13,7 @@ class CarNameTest {
         String testString = "A";
 
         assertThrows(IllegalArgumentException.class, () -> {
-             new CarName(testString.repeat(CarName.MAX_LENGTH + 1));
+             Name.createCarName(testString.repeat(Name.MAX_LENGTH + 1));
         });
     }
 }

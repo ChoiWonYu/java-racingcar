@@ -9,14 +9,14 @@ import java.util.NoSuchElementException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class CarListTest {
+class CarsTest {
 
-    private CarList cars;
+    private Cars cars;
 
     @Test
     @DisplayName("cars가 비어있을 때 예외")
     void when_cars_is_empty_throw_exception() {
-        cars = new CarList(new ArrayList<>());
+        cars =  Cars.from(new ArrayList<>());
         assertThrows(NoSuchElementException.class, cars::getMaxValue);
     }
 
@@ -35,14 +35,10 @@ class CarListTest {
     }
 
     private void setData() {
-        CarName name1 = new CarName("a");
-        CarName name2 = new CarName("b");
-        CarName name3 = new CarName("c");
+        Car car1 = Car.from("a");
+        Car car2 = Car.from("b");
+        Car car3 = Car.from("c");
 
-        Car car1 = new Car(name1);
-        Car car2 = new Car(name2);
-        Car car3 = new Car(name3);
-
-        cars = new CarList(List.of(car1, car2, car3));
+        cars =  Cars.from(List.of(car1, car2, car3));
     }
 }

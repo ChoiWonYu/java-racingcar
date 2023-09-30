@@ -9,12 +9,10 @@ import org.junit.jupiter.api.Test;
 class CarTest {
 
     private Car car;
-    private CarName carName;
 
     @BeforeEach
     void init() {
-        carName = new CarName("test");
-        car = new Car(carName);
+        car = Car.from("test");
     }
 
     @Test
