@@ -5,11 +5,11 @@ import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-public class CarList {
+public class Cars {
 
     private List<Car> cars;
 
-    public CarList(List<Car> cars) {
+    public Cars(List<Car> cars) {
         this.cars = cars;
     }
 
