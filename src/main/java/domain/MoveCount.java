@@ -8,11 +8,9 @@ public class MoveCount {
         this.moveCount = moveCount;
     }
 
-
     public void plusCount() {
         moveCount++;
     }
-
 
     public int getMoveCount() {
         return moveCount;
