@@ -11,7 +11,6 @@ import type.TryCount;
 public class InputView {
 
     private static final Scanner reader = new Scanner(System.in);
-    //private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public static List<CarName> getCarNames() {
         System.out.println("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).");
