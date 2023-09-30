@@ -1,6 +1,7 @@
 import java.util.List;
-import type.CarName;
-import type.TryCount;
+import service.RacingGameService;
+import domain.CarName;
+import domain.TryCount;
 import view.InputView;
 import view.ResultView;
 
@@ -10,7 +11,7 @@ public class RacingMain {
         final List<CarName> carNames = InputView.getCarNames();
         final TryCount tryCount = InputView.getTryCount();
 
-        final RacingGame racingGame = new RacingGame(carNames, tryCount);
+        final RacingGameService racingGame = new RacingGameService(carNames, tryCount);
         racingGame.race();
 
         ResultView.printWinners(racingGame.getWinCars());

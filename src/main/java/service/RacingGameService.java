@@ -1,22 +1,22 @@
+package service;
+
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-import service.MovingManager;
-import service.RandomMovingManager;
-import type.Car;
-import type.CarName;
-import type.CarList;
-import type.TryCount;
-import type.WinCars;
+import domain.Car;
+import domain.CarName;
+import domain.CarList;
+import domain.TryCount;
+import domain.WinCars;
 
-public class RacingGame {
+public class RacingGameService {
 
     private final MovingManager movingManager;
     private final CarList cars;
     private final TryCount tryCount;
 
-    public RacingGame(List<CarName> carNames, TryCount tryCount) {
+    public RacingGameService(List<CarName> carNames, TryCount tryCount) {
         List<Car> cars = generateCars(carNames);
         this.cars = new CarList(cars);
         this.tryCount = tryCount;

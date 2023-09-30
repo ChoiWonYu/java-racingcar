@@ -1,4 +1,4 @@
-package type;
+package domain;
 
 import java.util.List;
 import java.util.NoSuchElementException;

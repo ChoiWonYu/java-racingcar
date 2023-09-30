@@ -1,6 +1,6 @@
 package view;
 
-import type.WinCars;
+import domain.WinCars;
 
 public class ResultView {
 

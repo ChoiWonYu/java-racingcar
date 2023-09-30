@@ -1,4 +1,4 @@
-package type;
+package domain;
 
 public class MoveCount {
 

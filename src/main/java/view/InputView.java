@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import type.CarName;
-import type.TryCount;
+import domain.CarName;
+import domain.TryCount;
 
 public class InputView {
 
