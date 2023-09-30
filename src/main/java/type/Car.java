@@ -2,12 +2,13 @@ package type;
 
 public class Car {
 
+    public static final Integer DEFAULT_MOVE_COUNT_VALUE=1;
     private final CarName carName;
     private final MoveCount moveCount;
 
     public Car(CarName carName) {
         this.carName = carName;
-        this.moveCount = new MoveCount(1);
+        this.moveCount = new MoveCount(DEFAULT_MOVE_COUNT_VALUE);
     }
 
     public int getMoveCountValue() {
