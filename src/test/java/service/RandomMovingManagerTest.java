@@ -14,7 +14,7 @@ class RandomMovingManagerTest {
     @DisplayName("랜덤으로 생성한 숫자가 4미만일 경우 전진 불가, false 반환")
     void when_num_smaller_than_4_return_false() {
         movingManager = generateRandomMovingManagerByNum(3);
-        boolean result = movingManager.canMove();
+        boolean result = movingManager.canCarMove();
 
         assertFalse(result);
     }
@@ -23,7 +23,7 @@ class RandomMovingManagerTest {
     @DisplayName("랜덤으로 생성한 숫자가 4미만일 경우 전진 불가, false 반환")
     void when_num_bigger_than_4_return_true() {
         movingManager = generateRandomMovingManagerByNum(5);
-        boolean result = movingManager.canMove();
+        boolean result = movingManager.canCarMove();
 
         assertTrue(result);
     }
