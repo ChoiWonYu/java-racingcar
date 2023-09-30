@@ -2,15 +2,23 @@ package domain;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.function.Consumer;
+import java.util.Random;
 import java.util.stream.Collectors;
+import service.MovingManager;
+import service.RandomMovingManager;
 
 public class Cars {
 
-    private List<Car> cars;
+    private final List<Car> cars;
+    private final MovingManager movingManager;
 
-    public Cars(List<Car> cars) {
+    private Cars(List<Car> cars) {
         this.cars = cars;
+        this.movingManager = new RandomMovingManager(new Random());
+    }
+
+    public static Cars from(List<Car> carList) {
+        return new Cars(carList);
     }
 
     public void actOnEachCar(Consumer<Car> action) {
