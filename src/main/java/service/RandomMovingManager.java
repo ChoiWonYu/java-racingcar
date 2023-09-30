@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class RandomMovingManager implements MovingManager{
 
-    private final int    MAX_RANDOM_NUM=9;
+    public final int    MAX_RANDOM_NUM=9;
     private final Random random;
 
     public RandomMovingManager(Random random) {
@@ -12,7 +12,7 @@ public class RandomMovingManager implements MovingManager{
     }
 
     @Override
-    public boolean canMove() {
+    public Boolean canCarMove() {
         int randomNumber=generateRandomNumber();
         return randomNumber>=MAX_RANDOM_NUM/2;
     }
