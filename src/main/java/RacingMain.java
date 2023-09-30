@@ -1,19 +1,17 @@
-import java.util.List;
-import service.RacingGameService;
-import domain.CarName;
-import domain.TryCount;
-import view.InputView;
-import view.ResultView;
+import controller.RacingGameController;
+import controller.dto.CarNamesRequest;
+import controller.dto.TryCountRequest;
+import view.InputOutputView;
 
 public class RacingMain {
 
     public static void main(final String[] args) {
-        final List<CarName> carNames = InputView.getCarNames();
-        final TryCount tryCount = InputView.getTryCount();
+        final String carNames = InputOutputView.getCarNames();
+        final String tryCount = InputOutputView.getTryCount();
 
-        final RacingGameService racingGame = new RacingGameService(carNames, tryCount);
-        racingGame.race();
-
-        ResultView.printWinners(racingGame.getWinCars());
+        RacingGameController gameController=RacingGameController.of(CarNamesRequest.from(carNames),
+            TryCountRequest.from(tryCount));
+        gameController.race();
+        gameController.printWinner();
     }
 }
