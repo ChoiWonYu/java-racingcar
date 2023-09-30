@@ -28,7 +28,7 @@ public class Cars {
     public List<Car> getWinners() {
         Integer maxValue = getMaxValue();
         return cars.stream()
-            .filter(car -> car.getMoveCountValue() == maxValue)
+            .filter(car -> car.hasSameValue(maxValue))
             .collect(Collectors.toList());
     }
 

@@ -28,8 +28,8 @@ public class Car {
         moveCount.plusCount();
     }
 
-    public void printCarsMove() {
-        System.out.printf("%s : ",carName.getCarName());
-        System.out.println("-".repeat(moveCount.getMoveCount()));
+    public Boolean hasSameValue(Integer value) {
+        Integer countValue=getMoveCountValue();
+        return countValue.equals(value);
     }
 }
