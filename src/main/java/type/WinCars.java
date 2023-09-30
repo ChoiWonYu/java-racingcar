@@ -14,7 +14,7 @@ public class WinCars {
     @Override
     public String toString() {
         return winCars.stream()
-            .map(Car::getCarNameValue).collect(Collectors.joining(","));
+            .map(Car::getCarNameValue)
+            .collect(Collectors.joining(","));
     }
-
 }

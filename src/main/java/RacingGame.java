@@ -25,7 +25,8 @@ public class RacingGame {
 
     private List<Car> generateCars(List<CarName> carNames) {
         return carNames.stream()
-            .map(Car::new).collect(Collectors.toList());
+            .map(Car::new)
+            .collect(Collectors.toList());
     }
 
     public void race() {

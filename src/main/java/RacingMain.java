@@ -15,5 +15,4 @@ public class RacingMain {
 
         ResultView.printWinners(racingGame.getWinCars());
     }
-
 }

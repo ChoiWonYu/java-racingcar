@@ -12,8 +12,8 @@ class CarNameTest {
     public void when_car_name_longer_than_max_length() {
         String testString = "A";
 
-        assertThrows(IllegalArgumentException.class, () ->
-            new CarName(testString.repeat(CarName.MAX_LENGTH + 1)));
+        assertThrows(IllegalArgumentException.class, () -> {
+             new CarName(testString.repeat(CarName.MAX_LENGTH + 1));
+        });
     }
-
 }

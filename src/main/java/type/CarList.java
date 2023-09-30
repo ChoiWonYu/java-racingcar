@@ -26,7 +26,8 @@ public class CarList {
 
     public Integer getMaxValue() {
         return cars.stream()
-            .mapToInt(Car::getMoveCountValue).max()
+            .mapToInt(Car::getMoveCountValue)
+            .max()
             .orElseThrow(NoSuchElementException::new);
     }
 }

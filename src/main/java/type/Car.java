@@ -27,5 +27,4 @@ public class Car {
         System.out.printf("%s : ",carName.getCarName());
         System.out.println("-".repeat(moveCount.getMoveCount()));
     }
-
 }
