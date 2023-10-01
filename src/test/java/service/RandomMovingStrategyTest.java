@@ -3,16 +3,12 @@ package service;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class RandomMovingStrategyTest {
 
     private RandomMovingStrategy movingStrategy;
-
-    @BeforeEach
-
 
     @Test
     @DisplayName("랜덤으로 생성한 숫자가 4미만일 경우 전진 불가, false 반환")
