@@ -37,10 +37,8 @@ public class RacingGameController {
         }
     }
 
-    private void printEachCarMove(List<Car> targetCars) {
-        List<CarStatusResponse> carStatusDtos=targetCars.stream()
-            .map(CarStatusResponse::from)
-            .collect(Collectors.toList());
+    private void printEachCarMove(final List<Car> targetCars) {
+        List<CarStatusResponse> carStatusDtos = CarStatusResponse.createCarStatusResponses(targetCars);
 
         carStatusDtos.forEach(dto-> InputOutputView.printCarMove(dto.getCarName(),
                 dto.getCountMove())

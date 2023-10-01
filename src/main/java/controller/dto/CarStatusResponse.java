@@ -19,6 +19,13 @@ public class CarStatusResponse {
         return new CarStatusResponse(car.getCarNameValue(), car.getMoveCountValue());
     }
 
+    public static List<CarStatusResponse> createCarStatusResponses(final List<Car> targetCars) {
+        List<CarStatusResponse> carStatusDtos= targetCars.stream()
+            .map(CarStatusResponse::from)
+            .collect(Collectors.toList());
+        return carStatusDtos;
+    }
+
     public String getCarName() {
         return carName;
     }
