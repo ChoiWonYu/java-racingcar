@@ -4,7 +4,7 @@ public class MoveCount {
 
     private int moveCount;
 
-    public MoveCount(int moveCount) {
+    public MoveCount(final int moveCount) {
         this.moveCount = moveCount;
     }
 

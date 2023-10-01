@@ -6,12 +6,12 @@ public class Car {
     private final Name name;
     private final MoveCount moveCount;
 
-    private Car(Name carName) {
+    private Car(final Name carName) {
         this.name = carName;
         this.moveCount = new MoveCount(DEFAULT_MOVE_COUNT_VALUE);
     }
 
-    public static Car from(String inputName) {
+    public static Car from(final String inputName) {
         Name carName=Name.createCarName(inputName);
         return new Car(carName);
     }
@@ -28,7 +28,7 @@ public class Car {
         moveCount.plusCount();
     }
 
-    public Boolean hasSameValue(Integer value) {
+    public Boolean hasSameValue(final Integer value) {
         Integer countValue=getMoveCountValue();
         return countValue.equals(value);
     }

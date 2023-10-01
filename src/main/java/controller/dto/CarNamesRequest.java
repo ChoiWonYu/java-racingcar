@@ -1,29 +1,29 @@
 package controller.dto;
 
-import domain.Car;
-import domain.Cars;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import domain.Car;
+import domain.Cars;
 
 public class CarNamesRequest {
 
     public static final String NAME_SEPARATOR=",";
     private final String separatedCarNames;
 
-    private CarNamesRequest(String names) {
+    private CarNamesRequest(final String names) {
         this.separatedCarNames=names;
     }
 
-    public static CarNamesRequest from(String namesInput) {
+    public static CarNamesRequest from(final String namesInput) {
         return new CarNamesRequest(namesInput);
     }
 
     public Cars createCars() {
-        List<String> carNameArray = Arrays.stream(separatedCarNames.split(NAME_SEPARATOR))
-            .collect(Collectors.toList());
+        String[] carNameArray = separatedCarNames.split(NAME_SEPARATOR);
 
-        List<Car> carList=carNameArray.stream()
+        List<Car> carList=Arrays.stream(carNameArray)
             .map(Car::from)
             .collect(Collectors.toList());
 

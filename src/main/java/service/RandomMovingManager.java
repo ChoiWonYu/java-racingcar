@@ -7,7 +7,7 @@ public class RandomMovingManager implements MovingManager{
     public final int    MAX_RANDOM_NUM=9;
     private final Random random;
 
-    public RandomMovingManager(Random random) {
+    public RandomMovingManager(final Random random) {
         this.random=random;
     }
 
