@@ -37,21 +37,22 @@ public class RacingGameController {
         }
     }
 
-    private void printEachCarMove(final List<Car> targetCars) {
-        List<CarStatusResponse> carStatusDtos = CarStatusResponse.createCarStatusResponses(targetCars);
-
-        carStatusDtos.forEach(dto-> InputOutputView.printCarMove(dto.getCarName(),
-                dto.getCountMove())
-            );
-
-        InputOutputView.printNewLine();
-    }
-
     public void printWinner() {
         List<Car> winnersCars=cars.getWinners();
         String winners= CarNamesResponse.from(winnersCars)
             .getJoinedCarNames();
 
         InputOutputView.printWinners(winners);
+    }
+
+    private void printEachCarMove(final List<Car> targetCars) {
+        List<CarStatusResponse> carStatusDtos = CarStatusResponse.createCarStatusResponses(
+            targetCars);
+
+        carStatusDtos.forEach(dto -> InputOutputView.printCarMove(dto.getCarName(),
+            dto.getCountMove())
+        );
+
+        InputOutputView.printNewLine();
     }
 }
