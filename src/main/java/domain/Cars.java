@@ -2,20 +2,20 @@ package domain;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Random;
 import java.util.stream.Collectors;
 
-import service.MovingManager;
-import service.RandomMovingManager;
+import service.MovingStrategy;
+import service.RandomGenerator;
+import service.RandomMovingStrategy;
 
 public class Cars {
 
     private final List<Car> cars;
-    private final MovingManager movingManager;
+    private final MovingStrategy movingManager;
 
     private Cars(final List<Car> cars) {
         this.cars = cars;
-        this.movingManager = new RandomMovingManager(new Random());
+        this.movingManager = new RandomMovingStrategy(new RandomGenerator());
     }
 
     public static Cars from(final List<Car> carList) {

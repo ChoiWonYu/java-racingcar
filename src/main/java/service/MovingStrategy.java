@@ -1,6 +1,6 @@
 package service;
 
-public interface MovingManager {
+public interface MovingStrategy {
 
     Boolean canCarMove();
 }
