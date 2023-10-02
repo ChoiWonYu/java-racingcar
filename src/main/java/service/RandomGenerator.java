@@ -11,6 +11,6 @@ public class RandomGenerator {
     }
 
     public int generateRandomNumber(final int maxRandomNumber) {
-        return random.nextInt(maxRandomNumber);
+        return random.nextInt(maxRandomNumber + 1);
     }
 }
