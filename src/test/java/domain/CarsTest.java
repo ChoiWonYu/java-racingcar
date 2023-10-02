@@ -17,7 +17,7 @@ class CarsTest {
     @DisplayName("cars가 비어있을 때 예외")
     void when_cars_is_empty_throw_exception() {
         //given
-        cars = Cars.from(new ArrayList<>());
+        cars = new Cars(new ArrayList<>());
 
         //then
         assertThrows(NoSuchElementException.class, cars::getMaxValue);
@@ -48,6 +48,6 @@ class CarsTest {
         Car car2 = Car.from("b");
         Car car3 = Car.from("c");
 
-        cars = Cars.from(List.of(car1, car2, car3));
+        cars = new Cars(List.of(car1, car2, car3));
     }
 }
