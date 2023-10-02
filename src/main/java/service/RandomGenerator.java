@@ -10,7 +10,7 @@ public class RandomGenerator {
         this.random = new Random();
     }
 
-    public int generateRandomNumber(final Integer maxRandomNumber) {
+    public int generateRandomNumber(final int maxRandomNumber) {
         return random.nextInt(maxRandomNumber);
     }
 }

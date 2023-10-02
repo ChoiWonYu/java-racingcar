@@ -9,7 +9,7 @@ public class OutputView {
         System.out.println("실행 결과");
     }
 
-    public static void printCarMove(final String carName, final Integer count) {
+    public static void printCarMove(final String carName, final int count) {
         System.out.printf("%s : %s\n", carName, PROGRESS_BAR.repeat(count));
     }
 

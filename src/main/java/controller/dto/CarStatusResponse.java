@@ -8,9 +8,9 @@ import domain.Car;
 public class CarStatusResponse {
 
     private final String carName;
-    private final Integer countMove;
+    private final int countMove;
 
-    private CarStatusResponse(final String carName, final Integer countMove) {
+    private CarStatusResponse(final String carName, final int countMove) {
         this.carName = carName;
         this.countMove = countMove;
     }
@@ -30,7 +30,7 @@ public class CarStatusResponse {
         return carName;
     }
 
-    public Integer getCountMove() {
+    public int getCountMove() {
         return countMove;
     }
 }

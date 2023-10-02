@@ -36,13 +36,13 @@ public class Cars {
     }
 
     public List<Car> getWinners() {
-        Integer maxValue = getMaxValue();
+        int maxValue = getMaxValue();
         return cars.stream()
             .filter(car -> car.hasSameMoveCount(maxValue))
             .collect(Collectors.toList());
     }
 
-    public Integer getMaxValue() {
+    public int getMaxValue() {
         return cars.stream()
             .mapToInt(Car::getMoveCountValue)
             .max()

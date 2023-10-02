@@ -9,7 +9,7 @@ public class StubRandomGenerator extends RandomGenerator {
     }
 
     @Override
-    public int generateRandomNumber(final Integer endNum) {
+    public int generateRandomNumber(final int endNum) {
         return randomNumber;
     }
 }

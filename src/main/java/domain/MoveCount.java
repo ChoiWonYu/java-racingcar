@@ -8,7 +8,7 @@ public class MoveCount {
         this.moveCount = moveCount;
     }
 
-    public Boolean isSameValue(final Integer value) {
+    public boolean isSameValue(final int value) {
         return value == moveCount;
     }
 

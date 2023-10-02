@@ -4,9 +4,9 @@ import domain.TryCount;
 
 public class TryCountRequest {
 
-    private final Integer countRequest;
+    private final int countRequest;
 
-    private TryCountRequest(final Integer count) {
+    private TryCountRequest(final int count) {
         this.countRequest = count;
     }
 
