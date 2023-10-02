@@ -18,11 +18,14 @@ class CarTest {
     @Test
     @DisplayName("움직였을 때 moveCount의 값 증가")
     void when_receive_true_move() {
-
+        //given
         int initialMoveCount = car.getMoveCountValue();
+
+        //when
         car.move();
         int resultMoveCount = car.getMoveCountValue();
 
+        //then
         assertEquals(initialMoveCount + 1, resultMoveCount);
     }
 }
