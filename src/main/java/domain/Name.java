@@ -1,6 +1,7 @@
 package domain;
 
-import exception.ExceptionHandler;
+import static exception.ErrorMessage.LONGER_THAN_MAX_NAME_LENGTH;
+import static exception.ErrorMessage.printErrorMessage;
 
 public class Name {
 
@@ -19,7 +20,7 @@ public class Name {
 
     private static void validateLength(final String carName) {
         if (carName.length() > MAX_LENGTH) {
-            ExceptionHandler.printErrorMessage(String.format("이름은 %d자 이하만 가능합니다.", MAX_LENGTH));
+            printErrorMessage(LONGER_THAN_MAX_NAME_LENGTH);
             throw new IllegalArgumentException();
         }
     }

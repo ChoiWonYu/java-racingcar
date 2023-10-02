@@ -1,6 +1,7 @@
 package domain;
 
-import exception.ExceptionHandler;
+import static exception.ErrorMessage.LESS_THAN_MIN_TRY_COUNT;
+import static exception.ErrorMessage.printErrorMessage;
 
 public class TryCount {
 
@@ -19,8 +20,8 @@ public class TryCount {
 
     public void validateSize(final int tryCount) {
         if (tryCount > MIN_TRY_COUNT) {
-            ExceptionHandler.printErrorMessage(
-                String.format("시도 횟수는 %d 이상이어야 합니다.", MIN_TRY_COUNT));
+            printErrorMessage(
+                LESS_THAN_MIN_TRY_COUNT);
             throw new IllegalArgumentException();
         }
     }
