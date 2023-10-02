@@ -1,18 +1,9 @@
-import controller.RacingGameController;
-import controller.dto.CarNamesRequest;
-import controller.dto.TryCountRequest;
-import view.InputView;
+import java.util.Scanner;
 
 public class RacingMain {
 
     public static void main(final String[] args) {
-        final String carNames = InputView.getCarNames();
-        final String tryCount = InputView.getTryCount();
-
-        RacingGameController gameController = RacingGameController.of(
-            CarNamesRequest.from(carNames),
-            TryCountRequest.from(tryCount));
+        RacingGameController gameController = new RacingGameController(new Scanner(System.in));
         gameController.race();
-        gameController.printWinner();
     }
 }
