@@ -26,8 +26,8 @@ public class InputOutputView {
         System.out.println("실행 결과");
     }
 
-    public static void printCarMove(final String carName,final Integer count) {
-        System.out.printf("%s : %s\n",carName, PROGRESS_BAR.repeat(count));
+    public static void printCarMove(final String carName, final Integer count) {
+        System.out.printf("%s : %s\n", carName, PROGRESS_BAR.repeat(count));
     }
 
     public static void printNewLine() {

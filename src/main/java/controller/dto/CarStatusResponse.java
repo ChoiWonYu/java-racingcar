@@ -11,8 +11,8 @@ public class CarStatusResponse {
     private final Integer countMove;
 
     private CarStatusResponse(final String carName, final Integer countMove) {
-        this.carName=carName;
-        this.countMove=countMove;
+        this.carName = carName;
+        this.countMove = countMove;
     }
 
     public static CarStatusResponse from(final Car car) {
@@ -20,7 +20,7 @@ public class CarStatusResponse {
     }
 
     public static List<CarStatusResponse> createCarStatusResponses(final List<Car> targetCars) {
-        List<CarStatusResponse> carStatusDtos= targetCars.stream()
+        List<CarStatusResponse> carStatusDtos = targetCars.stream()
             .map(CarStatusResponse::from)
             .collect(Collectors.toList());
         return carStatusDtos;

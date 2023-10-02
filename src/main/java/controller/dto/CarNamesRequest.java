@@ -9,11 +9,12 @@ import domain.Cars;
 
 public class CarNamesRequest {
 
-    public static final String NAME_SEPARATOR=",";
+    public static final String NAME_SEPARATOR = ",";
+
     private final String separatedCarNames;
 
     private CarNamesRequest(final String names) {
-        this.separatedCarNames=names;
+        this.separatedCarNames = names;
     }
 
     public static CarNamesRequest from(final String namesInput) {
@@ -23,7 +24,7 @@ public class CarNamesRequest {
     public Cars createCars() {
         String[] carNameArray = separatedCarNames.split(NAME_SEPARATOR);
 
-        List<Car> carList=Arrays.stream(carNameArray)
+        List<Car> carList = Arrays.stream(carNameArray)
             .map(Car::from)
             .collect(Collectors.toList());
 

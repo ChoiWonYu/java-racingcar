@@ -19,7 +19,7 @@ public class Name {
 
     private static void validateLength(final String carName) {
         if (carName.length() > MAX_LENGTH) {
-            ExceptionHandler.printErrorMessage(String.format("이름은 %d자 이하만 가능합니다.",MAX_LENGTH));
+            ExceptionHandler.printErrorMessage(String.format("이름은 %d자 이하만 가능합니다.", MAX_LENGTH));
             throw new IllegalArgumentException();
         }
     }

@@ -2,7 +2,7 @@ package domain;
 
 public class Car {
 
-    public static final Integer DEFAULT_MOVE_COUNT_VALUE=1;
+    public static final Integer DEFAULT_MOVE_COUNT_VALUE = 1;
     private final Name name;
     private final MoveCount moveCount;
 
@@ -12,7 +12,7 @@ public class Car {
     }
 
     public static Car from(final String inputName) {
-        Name carName=Name.createCarName(inputName);
+        Name carName = Name.createCarName(inputName);
         return new Car(carName);
     }
 
@@ -29,7 +29,7 @@ public class Car {
     }
 
     public Boolean hasSameValue(final Integer value) {
-        Integer countValue=getMoveCountValue();
+        Integer countValue = getMoveCountValue();
         return countValue.equals(value);
     }
 }

@@ -15,21 +15,25 @@ public class RacingGameController {
 
     private final Cars cars;
     private final TryCount tryCount;
-    private RacingGameController(final Cars cars,final TryCount tryCount) {
-        this.cars=cars;
-        this.tryCount=tryCount;
-    };
 
-    public static RacingGameController of(final CarNamesRequest namesRequest, final TryCountRequest countRequest) {
-        TryCount tryCount=countRequest.createTryCount();
-        Cars cars=namesRequest.createCars();
+    private RacingGameController(final Cars cars, final TryCount tryCount) {
+        this.cars = cars;
+        this.tryCount = tryCount;
+    }
+
+    ;
+
+    public static RacingGameController of(final CarNamesRequest namesRequest,
+        final TryCountRequest countRequest) {
+        TryCount tryCount = countRequest.createTryCount();
+        Cars cars = namesRequest.createCars();
 
         return new RacingGameController(cars, tryCount);
     }
 
     public void race() {
         InputOutputView.printResultDescription();
-        List<Car>targetCars=cars.getCarList();
+        List<Car> targetCars = cars.getCarList();
         printEachCarMove(targetCars);
         for (int i = 0; i < tryCount.getTryCount(); i++) {
             cars.moveOrStopUsingManager();
@@ -38,8 +42,8 @@ public class RacingGameController {
     }
 
     public void printWinner() {
-        List<Car> winnersCars=cars.getWinners();
-        String winners= CarNamesResponse.from(winnersCars)
+        List<Car> winnersCars = cars.getWinners();
+        String winners = CarNamesResponse.from(winnersCars)
             .getJoinedCarNames();
 
         InputOutputView.printWinners(winners);

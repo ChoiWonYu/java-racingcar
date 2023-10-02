@@ -11,15 +11,15 @@ public class CarNamesResponse {
     private final String joinedCarNames;
 
     private CarNamesResponse(final String joinedCarNames) {
-        this.joinedCarNames=joinedCarNames;
+        this.joinedCarNames = joinedCarNames;
     }
 
     public static CarNamesResponse from(final List<Car> carList) {
-        List<String> carNameList=carList.stream()
+        List<String> carNameList = carList.stream()
             .map(Car::getCarNameValue)
             .collect(Collectors.toList());
 
-        String joinedCarNames=String.join(NAME_JOINER,carNameList);
+        String joinedCarNames = String.join(NAME_JOINER, carNameList);
         return new CarNamesResponse(joinedCarNames);
     }
 

@@ -9,7 +9,8 @@ public class RacingMain {
         final String carNames = InputOutputView.getCarNames();
         final String tryCount = InputOutputView.getTryCount();
 
-        RacingGameController gameController=RacingGameController.of(CarNamesRequest.from(carNames),
+        RacingGameController gameController = RacingGameController.of(
+            CarNamesRequest.from(carNames),
             TryCountRequest.from(tryCount));
         gameController.race();
         gameController.printWinner();
