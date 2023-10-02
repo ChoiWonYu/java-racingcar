@@ -24,12 +24,12 @@ public class Car {
         return name.getName();
     }
 
+    public Boolean hasSameMoveCount(Integer moveCount) {
+        return this.moveCount.isSameValue(moveCount);
+    }
+
     public void move() {
         moveCount.plusCount();
     }
 
-    public Boolean hasSameValue(final Integer value) {
-        Integer countValue = getMoveCountValue();
-        return countValue.equals(value);
-    }
 }
