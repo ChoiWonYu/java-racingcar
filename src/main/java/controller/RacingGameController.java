@@ -9,7 +9,7 @@ import controller.dto.TryCountRequest;
 import domain.Car;
 import domain.Cars;
 import domain.TryCount;
-import view.InputOutputView;
+import view.OutputView;
 
 public class RacingGameController {
 
@@ -32,7 +32,7 @@ public class RacingGameController {
     }
 
     public void race() {
-        InputOutputView.printResultDescription();
+        OutputView.printResultDescription();
         List<Car> targetCars = cars.getCarList();
         printEachCarMove(targetCars);
         for (int i = 0; i < tryCount.getTryCount(); i++) {
@@ -46,17 +46,17 @@ public class RacingGameController {
         String winners = CarNamesResponse.from(winnersCars)
             .getJoinedCarNames();
 
-        InputOutputView.printWinners(winners);
+        OutputView.printWinners(winners);
     }
 
     private void printEachCarMove(final List<Car> targetCars) {
         List<CarStatusResponse> carStatusDtos = CarStatusResponse.createCarStatusResponses(
             targetCars);
 
-        carStatusDtos.forEach(dto -> InputOutputView.printCarMove(dto.getCarName(),
+        carStatusDtos.forEach(dto -> OutputView.printCarMove(dto.getCarName(),
             dto.getCountMove())
         );
 
-        InputOutputView.printNewLine();
+        OutputView.printNewLine();
     }
 }
