@@ -16,30 +16,30 @@ class CarsTest {
     @Test
     @DisplayName("cars가 비어있을 때 예외")
     void when_cars_is_empty_throw_exception() {
-        //given
+        // given
         cars = new Cars(new ArrayList<>());
 
-        //then
+        // then
         assertThrows(NoSuchElementException.class, cars::getMaxValue);
     }
 
     @Test
     @DisplayName("cars 내부 car 중 가장 큰 전진 횟수를 반환")
     void return_max_value_of_move_count() {
-        //given
+        // given
         setData();
 
-        //then
+        // then
         assertEquals(1, cars.getMaxValue());
     }
 
     @Test
     @DisplayName("최대 전진 횟수를 가지는 car를 뽑는다.")
     void return_max_count_car_list() {
-        //given
+        // given
         setData();
 
-        //then
+        // then
         assertEquals(3, cars.getWinners().size());
     }
 

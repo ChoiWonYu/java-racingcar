@@ -13,26 +13,26 @@ class RandomMovingStrategyTest {
     @Test
     @DisplayName("랜덤으로 생성한 숫자가 4미만일 경우 전진 불가, false 반환")
     void when_num_smaller_than_4_return_false() {
-        //given
+        // given
         movingStrategy = generateRandomMovingStrategyByNum(3);
 
-        //when
+        // when
         boolean result = movingStrategy.canCarMove();
 
-        //then
+        // then
         assertFalse(result);
     }
 
     @Test
     @DisplayName("랜덤으로 생성한 숫자가 4미만일 경우 전진 불가, false 반환")
     void when_num_bigger_than_4_return_true() {
-        //given
+        // given
         movingStrategy = generateRandomMovingStrategyByNum(5);
 
-        //when
+        // when
         boolean result = movingStrategy.canCarMove();
 
-        //then
+        // then
         assertTrue(result);
     }
 

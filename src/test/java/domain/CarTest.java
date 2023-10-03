@@ -16,32 +16,32 @@ class CarTest {
     @Test
     @DisplayName("전진 전략의 메서드가 true를 반환하면 전진해야 한다.")
     void when_receive_true_move() {
-        //given
+        // given
         movingStrategy = new StubMovingStrategy(true);
         car = Car.of("test", movingStrategy);
         int initialMoveCount = car.getMoveCountValue();
 
-        //when
+        // when
         car.moveWhenSatisfiedCondition();
         int resultMoveCount = car.getMoveCountValue();
 
-        //then
+        // then
         assertEquals(initialMoveCount + 1, resultMoveCount);
     }
 
     @Test
     @DisplayName("전진 전략의 메서드가 false를 반환하면 전진하면 안 된다.")
     void when_receive_false_dont_move() {
-        //given
+        // given
         movingStrategy = new StubMovingStrategy(false);
         car = Car.of("test", movingStrategy);
 
-        //when
+        // when
         int initialMoveCount = car.getMoveCountValue();
         car.moveWhenSatisfiedCondition();
         int resultMoveCount = car.getMoveCountValue();
 
-        //then
+        // then
         assertEquals(initialMoveCount, resultMoveCount);
     }
 }
