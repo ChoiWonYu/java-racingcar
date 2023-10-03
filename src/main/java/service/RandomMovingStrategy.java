@@ -10,7 +10,7 @@ public class RandomMovingStrategy implements MovingStrategy {
     }
 
     @Override
-    public boolean canCarMove() {
+    public boolean canMove() {
         int randomNumber = randomGenerator.generateRandomNumber(MAX_RANDOM_NUM);
         return randomNumber >= MAX_RANDOM_NUM / 2;
     }

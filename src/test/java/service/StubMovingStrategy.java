@@ -9,7 +9,7 @@ public class StubMovingStrategy implements MovingStrategy {
     }
 
     @Override
-    public boolean canCarMove() {
+    public boolean canMove() {
         return expectedResult;
     }
 }

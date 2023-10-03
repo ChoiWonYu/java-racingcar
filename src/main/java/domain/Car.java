@@ -44,7 +44,7 @@ public class Car {
     }
 
     public void moveWhenSatisfiedCondition() {
-        if (movingStrategy.canCarMove()) {
+        if (movingStrategy.canMove()) {
             move();
         }
     }

@@ -17,7 +17,7 @@ class RandomMovingStrategyTest {
         movingStrategy = generateRandomMovingStrategyByNum(3);
 
         // when
-        boolean result = movingStrategy.canCarMove();
+        boolean result = movingStrategy.canMove();
 
         // then
         assertFalse(result);
@@ -30,7 +30,7 @@ class RandomMovingStrategyTest {
         movingStrategy = generateRandomMovingStrategyByNum(5);
 
         // when
-        boolean result = movingStrategy.canCarMove();
+        boolean result = movingStrategy.canMove();
 
         // then
         assertTrue(result);
