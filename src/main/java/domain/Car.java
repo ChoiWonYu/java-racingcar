@@ -49,10 +49,6 @@ public class Car {
         }
     }
 
-    public CarStatus toStatus() {
-        return new CarStatus(name.getName(), moveCount.getMoveCount());
-    }
-
     private void move() {
         moveCount.plusCount();
     }

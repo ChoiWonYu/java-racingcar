@@ -1,11 +1,9 @@
 import domain.CarMapper;
 import java.util.List;
 
-import domain.CarStatus;
 import domain.Car;
 import domain.Cars;
 import domain.TryCount;
-import java.util.Scanner;
 import view.InputView;
 import view.OutputView;
 
@@ -51,7 +49,6 @@ public class RacingGameController {
     }
 
     private void showEachCarMove(Car car) {
-        CarStatus status = car.toStatus();
-        OutputView.showCarMove(status.getCarName(), status.getCountMove());
+        OutputView.showCarMove(car.getCarNameValue(), car.getMoveCountValue());
     }
 }
