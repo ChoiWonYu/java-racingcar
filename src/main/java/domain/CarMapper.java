@@ -13,7 +13,7 @@ public class CarMapper {
         String[] carNames = separatedCarNames.split(NAME_SEPARATOR);
 
         List<Car> targetCars = Arrays.stream(carNames)
-            .map(Car::from)
+            .map(Car::createDefault)
             .collect(Collectors.toList());
 
         return new Cars(targetCars);

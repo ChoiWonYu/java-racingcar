@@ -44,9 +44,9 @@ class CarsTest {
     }
 
     private void setData() {
-        Car car1 = Car.from("a");
-        Car car2 = Car.from("b");
-        Car car3 = Car.from("c");
+        Car car1 = Car.createDefault("a");
+        Car car2 = Car.createDefault("b");
+        Car car3 = Car.createDefault("c");
 
         cars = new Cars(List.of(car1, car2, car3));
     }

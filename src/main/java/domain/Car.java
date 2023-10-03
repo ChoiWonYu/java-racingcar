@@ -18,14 +18,14 @@ public class Car {
         this.movingStrategy = movingStrategy;
     }
 
-    public static Car from(final String inputName) {
+    public static Car createDefault(final String inputName) {
         Name carName = Name.createCarName(inputName);
         MoveCount count = new MoveCount(DEFAULT_MOVE_COUNT_VALUE);
         MovingStrategy movingStrategy = new RandomMovingStrategy(new RandomGenerator());
         return new Car(carName, count, movingStrategy);
     }
 
-    public static Car of(final String inputName, final MovingStrategy movingStrategy) {
+    public static Car createDefault(final String inputName, final MovingStrategy movingStrategy) {
         Name carName = Name.createCarName(inputName);
         MoveCount count = new MoveCount(DEFAULT_MOVE_COUNT_VALUE);
         return new Car(carName, count, movingStrategy);

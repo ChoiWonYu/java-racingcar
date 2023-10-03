@@ -18,7 +18,7 @@ class CarTest {
     void when_receive_true_move() {
         // given
         movingStrategy = new StubMovingStrategy(true);
-        car = Car.of("test", movingStrategy);
+        car = Car.createDefault("test", movingStrategy);
         int initialMoveCount = car.getMoveCountValue();
 
         // when
@@ -34,7 +34,7 @@ class CarTest {
     void when_receive_false_dont_move() {
         // given
         movingStrategy = new StubMovingStrategy(false);
-        car = Car.of("test", movingStrategy);
+        car = Car.createDefault("test", movingStrategy);
 
         // when
         int initialMoveCount = car.getMoveCountValue();
