@@ -6,14 +6,16 @@ import domain.Car;
 import domain.Cars;
 import domain.TryCount;
 import java.util.Scanner;
+import view.InputView;
+import view.OutputView;
 
 public class RacingGameController {
 
-    private final Scanner reader;
+    private final InputView reader;
     private Cars cars;
     private TryCount tryCount;
 
-    public RacingGameController(final Scanner reader) {
+    public RacingGameController(final InputView reader) {
         this.reader = reader;
     }
 
@@ -34,11 +36,11 @@ public class RacingGameController {
 
     private void initGame() {
         OutputView.askCarsNames();
-        String namesInput = reader.nextLine();
+        String namesInput = reader.getInputLine();
         this.cars = CarMapper.inputToCars(namesInput);
 
         OutputView.askTryCount();
-        String countInput = reader.nextLine();
+        String countInput = reader.getInputLine();
         this.tryCount = TryCount.from(countInput);
     }
 
