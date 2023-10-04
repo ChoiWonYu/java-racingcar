@@ -7,7 +7,7 @@ public class InputView {
     private final Scanner reader;
 
     public InputView(Scanner reader) {
-        this.reader=reader;
+        this.reader = reader;
     }
 
     public String getInputLine() {
